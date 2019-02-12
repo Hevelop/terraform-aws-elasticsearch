@@ -58,7 +58,7 @@ resource "aws_iam_service_linked_role" "default" {
 }
 
 resource "aws_elasticsearch_domain" "default" {
-  count                 = "${var.enabled == "true" ? 1 : 0}"
+  count                 = "${var.enabled == "true" && var.vpc_options_enabled == "true" ? 1 : 0}"
   domain_name           = "${module.label.id}"
   elasticsearch_version = "${var.elasticsearch_version}"
 

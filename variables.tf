@@ -54,6 +54,12 @@ variable "vpc_id" {
   description = "VPC ID"
 }
 
+variable "vpc_options_enabled" {
+  type        = "string"
+  default     = "false"
+  description = "Enable VPC related options"
+}
+
 variable "subnet_ids" {
   type        = "list"
   description = "Subnet ids"
