@@ -164,6 +164,30 @@ variable "log_publishing_application_cloudwatch_log_group_arn" {
   description = "ARN of the CloudWatch log group to which log for ES_APPLICATION_LOGS needs to be published"
 }
 
+variable "cognito_options_enabled" {
+  type        = "string"
+  default     = "false"
+  description = "Specifies whether Amazon Cognito authentication with Kibana is enabled or not"
+}
+
+variable "cognito_options_user_pool_id" {
+  type        = "string"
+  default     = ""
+  description = "ID of the Cognito User Pool to use"
+}
+
+variable "cognito_options_identity_pool_id" {
+  type        = "string"
+  default     = ""
+  description = "ID of the Cognito Identity Pool to use"
+}
+
+variable "cognito_options_role_arn" {
+  type        = "string"
+  default     = ""
+  description = "ARN of the IAM role that has the AmazonESCognitoAccess policy attached"
+}
+
 variable "automated_snapshot_start_hour" {
   description = "Hour at which automated snapshots are taken, in UTC"
   default     = 0
