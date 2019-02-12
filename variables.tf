@@ -84,7 +84,7 @@ variable "instance_count" {
 
 variable "iam_role_arns" {
   type        = "list"
-  default     = []
+  default     = ["*"]
   description = "List of IAM role ARNs to permit access to the Elasticsearch domain"
 }
 
